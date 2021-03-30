@@ -1104,20 +1104,7 @@ echo "##### Install completed #####" | tee -a ${INSTALL_LOG}
 ## @Copyright	Copyright 2008, Guillaume Watteeux
 #----
 yes_no_default() {
-	local message=$1
-	local default=${2:-$no}
-	local res="not_define"
-	while [ "$res" != "$yes" ] && [ "$res" != "$no" ] && [ ! -z "$res" ] ; do
-		echo -e "\n$message\n$(gettext "[y/n], default to [$default]:")"
-		echo -en "> "
-		read res
-		[ -z "$res" ] && res="$default"
-	done
-	if [ "$res" = "$yes" ] ; then
-		return 0
-	else 
-		return 1
-	fi
+  return 0
 }
 
 
